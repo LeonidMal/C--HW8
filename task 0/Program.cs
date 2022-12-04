@@ -57,11 +57,14 @@ void SortArray(int[,] ar)
     {
         for (int j = 0; j < ar.GetLength(1) - 1; j++)
         {
-            if (ar[i, j] < ar[i, j + 1])
+            for (int m = 0; m < ar.GetLength(1) - 1; m++)
             {
-                tempNum = ar[i, j];
-                ar[i, j] = ar[i, j + 1];
-                ar[i, j + 1] = tempNum;
+                if (ar[i, m] < ar[i, m + 1])
+                {
+                    tempNum = ar[i, m];
+                    ar[i, m] = ar[i, m + 1];
+                    ar[i, m + 1] = tempNum;
+                }
             }
         }
     }
